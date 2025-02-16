@@ -6,7 +6,7 @@ from os import getenv
 from aiogram import Bot, Dispatcher, html
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
-from aiogram.filters import CommandStart
+from aiogram.filters import CommandStart, Command
 from aiogram.types import Message
 
 # Bot token can be obtained via https://t.me/BotFather
@@ -22,12 +22,22 @@ async def command_start_handler(message: Message) -> None:
     """
     This handler receives messages with `/start` command
     """
-    # Most event objects have aliases for API methods that can be called in events' context
-    # For example if you want to answer to incoming message you can use `message.answer(...)` alias
-    # and the target chat will be passed to :ref:`aiogram.methods.send_message.SendMessage`
-    # method automatically or call API method directly via
-    # Bot instance: `bot.send_message(chat_id=message.chat.id, ...)`
     await message.answer(f"Hello, {html.bold(message.from_user.full_name)}!")
+
+@dp.message(Command('site'))
+async def command_site_handler(message: Message) -> None:
+    markup = InlineKeyboardMarkup(
+        inline_keyboard=[
+            [
+                InlineKeyboardButton( 
+                    text="Open",
+                    web_app=WebAppInfo(url=f'https://google.com'),
+                )
+            ]
+        ]
+    )
+await message. answer ("Start", reply_markup=markup)
+    
 
 
 @dp.message()
