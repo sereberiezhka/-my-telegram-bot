@@ -3,6 +3,16 @@ import logging
 import sys
 from os import getenv
 
+import os
+
+print("🔄 Загружаю переменные окружения...")
+TOKEN = os.getenv("TOKEN")
+
+if not TOKEN:
+    print("❌ Ошибка: Railway НЕ передает TOKEN!")
+else:
+    print(f"✅ Railway передает TOKEN: {TOKEN[:10]}...")
+    
 from aiogram import Bot, Dispatcher, html
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
