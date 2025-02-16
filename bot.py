@@ -20,7 +20,6 @@ from aiogram.filters import CommandStart, Command
 from aiogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, WebAppInfo
 
 # Bot token can be obtained via https://t.me/BotFather
-TOKEN = getenv("8064051318:AAFsTBfv-fjbNe4mJA81d2T2TAGM9QYGFwY")
 
 # All handlers should be attached to the Router (or Dispatcher)
 
@@ -46,7 +45,7 @@ async def command_site_handler(message: Message) -> None:
             ]
         ]
     )
-    await message. answer ("Start", reply_markup=markup)
+    await message.answer ("Start", reply_markup=markup)
     
 
 
