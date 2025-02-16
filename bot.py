@@ -31,7 +31,7 @@ async def command_start_handler(message: Message) -> None:
     """
     This handler receives messages with `/start` command
     """
-    await message.answer(f"Hello")
+    await message.answer(f"Тестовый запуск бота")
 
 @dp.message(Command('site'))
 async def command_site_handler(message: Message) -> None:
@@ -39,13 +39,13 @@ async def command_site_handler(message: Message) -> None:
         inline_keyboard=[
             [
                 InlineKeyboardButton( 
-                    text="Open",
+                    text="Перейти в Магазин",
                     web_app=WebAppInfo(url=f'https://brissfilter.com'),
                 )
             ]
         ]
     )
-    await message.answer ("Start", reply_markup=markup)
+    await message.answer ("Нажми на кнопку чтобы перейти в магазин", reply_markup=markup)
     
 
 
