@@ -40,7 +40,7 @@ async def command_site_handler(message: Message) -> None:
             [
                 InlineKeyboardButton( 
                     text="Open",
-                    web_app=WebAppInfo(url=f'https://google.com'),
+                    web_app=WebAppInfo(url=f'https://brissfilter.com'),
                 )
             ]
         ]
