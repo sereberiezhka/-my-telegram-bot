@@ -40,7 +40,7 @@ async def command_site_handler(message: Message) -> None:
             [
                 InlineKeyboardButton( 
                     text="Перейти в Магазин",
-                    web_app=WebAppInfo(url=f'https://brissfilter.com'),
+                    web_app=WebAppInfo(url=f'https://ms-store54.ru'),
                 )
             ]
         ]
